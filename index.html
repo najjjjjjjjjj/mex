@@ -1,4 +1,3 @@
-
 <!DOCTYPE html>
 <html lang="en">
 <head>
@@ -20,53 +19,64 @@
         <tr>
             <td>
                 <h2 style="color: #2c3e50;">Why should we not deport</h2>
-                <ul style="font-size: 1.1em;
-				           color: #2c3e50;">
+                <ul style="font-size: 1.1em; color: #2c3e50;">
                     <li>They make good tacos</li>
                     <li>They always have tequila</li>
                     <li>They are short</li>
-					<button style=" 
-								   background-color: #66d9ef; 
+                </ul>
+                <button id="doNotDeportButton" style=" 
+                                   background-color: #66d9ef; 
                                    color: #1a1a1a; 
                                    padding: 10px 20px;
                                    border: none;
                                    cursor: pointer;
-								   margin-top: 1cm;
-								   width: 150px;
-								   ">do not deport</button>
-								    <p id="clickCount">Button clicked: 0 times</p>
-
-    <script>
-        let count = 0; // Initialize click count
-        const button = document.getElementById("myButton");
-        const display = document.getElementById("clickCount");
-
-        button.onclick = function() {
-            count++; // Increment count on button click
-            display.innerHTML = "Button clicked: " + count + " times"; 
-        };
-    </script>
-                </ul>
+                                   margin-top: 1cm;
+                                   width: 150px;">do not deport</button>
+                <p id="doNotDeportCount">Button clicked: 0 times</p>
             </td>
             <td>
                 <h2 style="color: #2c3e50;">Why should we deport</h2>
-                <ul style="font-size: 1.1em;
-				           color: #2c3e50;">
+                <ul style="font-size: 1.1em; color: #2c3e50;">
                     <li>Kem wants to deport them</li>
                     <li>Kem is a hater</li>
                     <li>I'm bored thb</li>
-					<button style=" 
-								   background-color: #C0392B; 
+                </ul>
+                <button id="deportButton" style=" 
+                                   background-color: #C0392B; 
                                    color: #1a1a1a; 
                                    padding: 10px 20px;
                                    border: none;
                                    cursor: pointer;
-								   margin-top: 1cm;
-								   width: 150px;
-								   ">deport</button>
-                </ul>
+                                   margin-top: 1cm;
+                                   width: 150px;">deport</button>
+                <p id="deportCount">Button clicked: 0 times</p>
             </td>
         </tr>
     </table>
+
+    <script>
+        // Initialize click counts
+        let doNotDeportCount = 0;
+        let deportCount = 0;
+
+        // Get button and count display elements
+        const doNotDeportButton = document.getElementById("doNotDeportButton");
+        const deportButton = document.getElementById("deportButton");
+        const doNotDeportCountDisplay = document.getElementById("doNotDeportCount");
+        const deportCountDisplay = document.getElementById("deportCount");
+
+        // Add click event listeners
+        doNotDeportButton.onclick = function() {
+            doNotDeportCount++; // Increment count
+            doNotDeportCountDisplay.innerHTML = "Button clicked: " + doNotDeportCount + " times"; // Update display
+            doNotDeportButton.disabled = true; // Disable the button
+        };
+
+        deportButton.onclick = function() {
+            deportCount++; // Increment count
+            deportCountDisplay.innerHTML = "Button clicked: " + deportCount + " times"; // Update display
+            deportButton.disabled = true; // Disable the button
+        };
+    </script>
 </body>
 </html>
